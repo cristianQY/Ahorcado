@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="root" maxHeight="Infinity" maxWidth="Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+    <!-- Ajustar las columnas para que se expandan proporcionalmente -->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="33" /> <!-- Primera columna ocupa el 33% -->
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="33" /> <!-- Segunda columna ocupa el 33% -->
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="34" /> <!-- Tercera columna ocupa el 34% -->
+    </columnConstraints>
+
+    <!-- Ajustar las filas para que se expandan proporcionalmente -->
+    <rowConstraints>
+        <RowConstraints percentHeight="25" vgrow="ALWAYS" /> <!-- Primera fila ocupa el 25% -->
+        <RowConstraints percentHeight="25" vgrow="ALWAYS" /> <!-- Segunda fila ocupa el 25% -->
+        <RowConstraints percentHeight="25" vgrow="ALWAYS" /> <!-- Tercera fila ocupa el 25% -->
+        <RowConstraints percentHeight="25" vgrow="ALWAYS" /> <!-- Cuarta fila ocupa el 25% -->
+    </rowConstraints>
+
+    <children>
+        <!-- Caja con el campo de texto y botones, ocupa toda la fila 4 -->
+        <HBox alignment="TOP_CENTER" spacing="5.0" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+            <children>
+                <TextField fx:id="letraText" minWidth="-Infinity" prefWidth="200.0" HBox.hgrow="NEVER" />
+                <Button fx:id="letraButtom" mnemonicParsing="false" onAction="#onLetraAction" text="Letra" />
+                <Button fx:id="solveButtom" mnemonicParsing="false" onAction="#onSolveAction" text="Resolver" />
+            </children>
+        </HBox>
+
+        <!-- Etiqueta para las palabras usadas, centrada en la tercera fila -->
+        <Label fx:id="usedWordLabel" alignment="CENTER" contentDisplay="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+
+        <!-- Etiqueta de palabra oculta, centrada en la segunda fila -->
+        <Label fx:id="hiddenLabel" text="Palabra Oculta" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+
+        <!-- Etiqueta de puntuación, en la columna derecha -->
+        <Label alignment="TOP_RIGHT" text="Puntuación:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+            <GridPane.margin>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </GridPane.margin>
+        </Label>
+
+        <!-- Etiqueta que muestra el puntaje, también centrada en la columna derecha -->
+        <Label fx:id="puntosLabel" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+
+        <!-- Imagen del ahorcado, centrada en la primera fila -->
+        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
+            <image>
+                <Image url="@../images/1.png" />
+            </image>
+            <GridPane.margin>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </GridPane.margin>
+        </ImageView>
+    </children>
+</GridPane>
