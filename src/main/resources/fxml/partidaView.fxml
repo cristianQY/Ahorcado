@@ -62,5 +62,6 @@
                 <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
             </GridPane.margin>
         </ImageView>
+      <Button fx:id="newGameButton" alignment="CENTER" mnemonicParsing="false" onAction="#onNewGameAction" text="Nueva Partida" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
     </children>
 </GridPane>
